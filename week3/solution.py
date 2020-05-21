@@ -1,6 +1,15 @@
+from os.path import splitext
+
+
 class CarBase:
     def __init__(self, brand, photo_file_name, carrying):
-        pass
+        self.brand = brand
+        self.photo_file_name = photo_file_name
+        self.carrying = carrying
+
+    def get_photo_file_ext(photo_file_name):
+        photo_ext = splitext(photo_file_name)
+        return photo_ext[1]
 
 
 class Car(CarBase):
@@ -20,3 +29,4 @@ class SpecMachine(CarBase):
 
 def get_car_list(csv_filename):
     car_list = []
+
