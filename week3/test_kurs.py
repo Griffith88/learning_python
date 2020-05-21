@@ -15,7 +15,7 @@ class Valut:
         valut = {
             "Country": valut_data['CharCode'],
             "CurrentRate": valut_data['Value'],
-            "Previous": valut_data['Previous']
+            "Name": valut_data['Name']
         }
         list_valut = []
         for val in valut.values():
