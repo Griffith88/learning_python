@@ -2,7 +2,6 @@ import requests
 import argparse
 
 
-
 class Valut:
 
     def __init__(self, country):
@@ -20,7 +19,8 @@ class Valut:
         list_valut = []
         for val in valut.values():
             list_valut.append(val)
-        return list_valut
+        return valut
+
 
 def arg_p():
     parser = argparse.ArgumentParser()
@@ -28,11 +28,13 @@ def arg_p():
     args = parser.parse_args()
     return args.Country
 
+
 def main():
     def_country = Valut(arg_p())
     pr_rate = def_country.get()
-    print(' '.join(str(x) for x in pr_rate))
+    # print(' '.join(str(x) for x in pr_rate))
+    print(pr_rate)
+
 
 if __name__ == '__main__':
     main()
-
