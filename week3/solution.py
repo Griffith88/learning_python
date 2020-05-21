@@ -18,8 +18,12 @@ class Car(CarBase):
 
 
 class Truck(CarBase):
+
     def __init__(self, brand, photo_file_name, carrying, body_whl):
-        pass
+        super().__init__(brand, photo_file_name, carrying)
+        self.body_whl = body_whl or []
+
+    def get_body_volume():
 
 
 class SpecMachine(CarBase):
