@@ -9,3 +9,4 @@ class FileReader:
             return data
         except FileNotFoundError:
             return ''
+#all is working
