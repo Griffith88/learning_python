@@ -58,4 +58,9 @@ class SpecMachine(CarBase):
 
 def get_car_list(csv_filename):
     car_list = []
+    with open(csv_filename) as csv_fd:
+        reader = csv.reader(csv_fd, delimiter=';')
+        next(reader)  # пропускаем заголовок
+        for row in reader:
+            print(row)
 
