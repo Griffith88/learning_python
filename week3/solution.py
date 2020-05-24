@@ -2,14 +2,18 @@ from os.path import splitext
 import csv
 
 class CarBase:
+    valid_list = ['.jpg', '.jpeg', '.png']
+
     def __init__(self, brand, photo_file_name, carrying):
         self.brand = brand
         self.photo_file_name = photo_file_name
         self.carrying = carrying
+        if self.get_photo_file_ext() not in self.valid_list:
+            raise ValueError('blalalal')
 
     def get_photo_file_ext(self):
-        file_ext = splitext(self.photo_file_name)
-        return file_ext[1]
+        file_ext = splitext(self.photo_file_name)[1]
+        return file_ext
 
 
 class Car(CarBase):
