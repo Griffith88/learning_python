@@ -124,7 +124,3 @@ def get_car_list(csv_filename):
         print(car_list)
     return car_list
 
-
-
-if __name__ == '__main__':
-    get_car_list('coursera_week3_cars.csv')
