@@ -13,8 +13,7 @@ class CarBase:
             raise ValueError('Фотография должна быть с расширением jpeg,jpg,png или gif!')
 
     def get_photo_file_ext(self):
-        file_ext = splitext(self.photo_file_name)[1]
-        return file_ext
+        return splitext(self.photo_file_name)[1]
 
 
 class Car(CarBase):
