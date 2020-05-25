@@ -47,15 +47,15 @@ class Truck(CarBase):
         self.body_whl = body_whl
 
         try:
-            raw_body_whl = body_whl.split('x')
+            raw_body_whl = body_whl.split('x', 2)
             body_length = float(raw_body_whl[0])
             body_width = float(raw_body_whl[1])
             body_height = float(raw_body_whl[2])
 
         except ValueError:
-            body_length = 0
-            body_width = 0
-            body_height = 0
+            body_length = 0.0
+            body_width = 0.0
+            body_height = 0.0
 
         self.body_length = float(body_length)
         self.body_width = float(body_width)
@@ -122,7 +122,8 @@ def get_car_list(csv_filename):
                 car_list.append(car_class.instance(row))
             except (ValueError, IndexError):
                 # если данные некорректны, то игнорируем их
-                pass
+                car_list = []
+                continue
         return car_list
 
 # if __name__ == '__main__':
