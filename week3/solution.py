@@ -103,19 +103,12 @@ def get_car_list(csv_filename):
         dict_creation = {car_class.car_type: car_class for car_class in [Car, Truck, SpecMachine]}
 
         for row in reader:
-            car_type = row[CarBase.csv_car_type]
-
             try:
-                car_class = dict_creation[car_type]
-            except KeyError:
-
-                continue
-
-            try:
-                car_list.append(car_class.from_csv(row))
-            except ValueError:
-                car_list = []
-                continue
+                 car_type = row[CarBase.csv_car_type]
+                 car_class = dict_creation[car_type]
+                 car_list.append(car_class.from_csv(row))
+            except (IndexError, KeyError, ValueError):
+                    pass
 
         return car_list
 
