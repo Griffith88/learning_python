@@ -1,6 +1,7 @@
 from os.path import splitext
 import csv
 
+
 class CarBase:
     valid_list = ['.jpg', '.jpeg', '.png']
 
@@ -17,15 +18,15 @@ class CarBase:
 
 
 class Car(CarBase):
-
     car_type = 'Car'
 
     def __init__(self, brand, photo_file_name, carrying, passenger_seats_count):
-        super().__init__(brand,photo_file_name,carrying)
+        super().__init__(brand, photo_file_name, carrying)
         self.passenger_seats_count = passenger_seats_count
 
+
 class Truck(CarBase):
-    car_type = 'truck'
+    car_type = 'Truck'
 
     def __init__(self, brand, photo_file_name, carrying, body_whl):
         super().__init__(brand, photo_file_name, carrying)
@@ -46,11 +47,8 @@ class Truck(CarBase):
         self.body_width = body_width
         self.body_height = body_height
 
-
     def get_body_volume(self):
         return self.body_height * self.body_width * self.body_length
-
-
 
 
 class SpecMachine(CarBase):
@@ -68,4 +66,3 @@ def get_car_list(csv_filename):
         next(reader)  # пропускаем заголовок
         for row in reader:
             print(row)
-
