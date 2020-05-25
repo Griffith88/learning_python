@@ -15,7 +15,7 @@ class CarBase:
     def __init__(self, brand, photo_file_name, carrying):
         self.brand = brand
         self.photo_file_name = photo_file_name
-        self.carrying = carrying
+        self.carrying = float(carrying)
         if self.get_photo_file_ext() not in self.valid_list:
             raise ValueError('Фотография должна быть с расширением jpeg,jpg,png или gif!')
 
@@ -28,7 +28,7 @@ class Car(CarBase):
 
     def __init__(self, brand, photo_file_name, carrying, passenger_seats_count):
         super().__init__(brand, photo_file_name, carrying)
-        self.passenger_seats_count = passenger_seats_count
+        self.passenger_seats_count = int(passenger_seats_count)
 
     @classmethod
     def instance(cls, row):
@@ -57,9 +57,9 @@ class Truck(CarBase):
             body_width = 0
             body_height = 0
 
-        self.body_length = body_length
-        self.body_width = body_width
-        self.body_height = body_height
+        self.body_length = float(body_length)
+        self.body_width = float(body_width)
+        self.body_height = float(body_height)
 
     def get_body_volume(self):
         return self.body_height * self.body_width * self.body_length
@@ -90,7 +90,9 @@ class SpecMachine(CarBase):
         )
 
 def get_car_list(csv_filename):
+
     car_list = []
+
     with open(csv_filename) as csv_fd:
         reader = csv.reader(csv_fd, delimiter=';')
         next(reader)  # пропускаем заголовок
@@ -121,6 +123,7 @@ def get_car_list(csv_filename):
             except (ValueError, IndexError):
                 # если данные некорректны, то игнорируем их
                 pass
-        print(car_list)
-    return car_list
+        return car_list
 
+# if __name__ == '__main__':
+#     get_car_list('coursera_week3_cars.csv')
