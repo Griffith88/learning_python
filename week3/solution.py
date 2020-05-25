@@ -3,7 +3,7 @@ import csv
 
 
 class CarBase:
-    valid_list = ['.jpg', '.jpeg', '.png']
+    valid_list = ['.jpg', '.jpeg', '.png', '.gif']
 
     def __init__(self, brand, photo_file_name, carrying):
         self.brand = brand
@@ -18,7 +18,7 @@ class CarBase:
 
 
 class Car(CarBase):
-    car_type = 'Car'
+    car_type = 'car'
 
     def __init__(self, brand, photo_file_name, carrying, passenger_seats_count):
         super().__init__(brand, photo_file_name, carrying)
@@ -26,7 +26,7 @@ class Car(CarBase):
 
 
 class Truck(CarBase):
-    car_type = 'Truck'
+    car_type = 'truck'
 
     def __init__(self, brand, photo_file_name, carrying, body_whl):
         super().__init__(brand, photo_file_name, carrying)
@@ -52,7 +52,7 @@ class Truck(CarBase):
 
 
 class SpecMachine(CarBase):
-    car_type = 'SpecMachine'
+    car_type = 'spec_machine'
 
     def __init__(self, brand, photo_file_name, carrying, extra):
         super().__init__(brand, photo_file_name, carrying)
