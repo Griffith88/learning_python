@@ -2,6 +2,7 @@ import csv
 
 
 def get_car_list(csv_filename):
+
     with open(csv_filename) as csv_fd:
         reader = csv.reader(csv_fd, delimiter=';')
         next(reader)  # пропускаем заголовок
