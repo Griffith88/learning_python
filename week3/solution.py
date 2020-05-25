@@ -19,7 +19,6 @@ class CarBase:
         if self.get_photo_file_ext() not in self.valid_list:
             raise ValueError('Фотография должна быть с расширением jpeg,jpg,png или gif!')
 
-
     def get_photo_file_ext(self):
         return splitext(self.photo_file_name)[1]
 
@@ -104,14 +103,13 @@ def get_car_list(csv_filename):
 
         for row in reader:
             try:
-                 car_type = row[CarBase.csv_car_type]
-                 car_class = dict_creation[car_type]
-                 car_list.append(car_class.from_csv(row))
+                car_type = row[CarBase.csv_car_type]
+                car_class = dict_creation[car_type]
+                car_list.append(car_class.from_csv(row))
             except (IndexError, KeyError, ValueError):
-                    pass
+                pass
 
         return car_list
 
-
-#if __name__ == '__main__':
+# if __name__ == '__main__':
 #    get_car_list('coursera_week3_cars.csv')
