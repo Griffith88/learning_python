@@ -21,8 +21,8 @@ class Car(CarBase):
     car_type = 'Car'
 
     def __init__(self, brand, photo_file_name, carrying, passenger_seats_count):
-        pass
-
+        super().__init__(brand,photo_file_name,carrying)
+        self.passenger_seats_count = passenger_seats_count
 
 class Truck(CarBase):
     car_type = 'truck'
@@ -57,7 +57,8 @@ class SpecMachine(CarBase):
     car_type = 'SpecMachine'
 
     def __init__(self, brand, photo_file_name, carrying, extra):
-        pass
+        super().__init__(brand, photo_file_name, carrying)
+        self.extra = extra
 
 
 def get_car_list(csv_filename):
