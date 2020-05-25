@@ -10,7 +10,7 @@ class CarBase:
         self.photo_file_name = photo_file_name
         self.carrying = carrying
         if self.get_photo_file_ext() not in self.valid_list:
-            raise ValueError('blalalal')
+            raise ValueError('Фотография должна быть с расширением jpeg,jpg,png или gif!')
 
     def get_photo_file_ext(self):
         file_ext = splitext(self.photo_file_name)[1]
