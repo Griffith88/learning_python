@@ -16,6 +16,8 @@ class CarBase:
         self.brand = brand
         self.photo_file_name = photo_file_name
         self.carrying = float(carrying)
+        if self.brand == '':
+            raise ValueError('Brand пустой')
         if self.get_photo_file_ext() not in self.valid_list:
             raise ValueError('Фотография должна быть с расширением jpeg,jpg,png или gif!')
 
@@ -81,6 +83,8 @@ class SpecMachine(CarBase):
     def __init__(self, brand, photo_file_name, carrying, extra):
         super().__init__(brand, photo_file_name, carrying)
         self.extra = extra
+        if self.extra == '':
+            raise ValueError('Extra дожна быть не пустой')
 
     @classmethod
     def from_csv(cls, row):
@@ -108,8 +112,8 @@ def get_car_list(csv_filename):
                 car_list.append(car_class.from_csv(row))
             except (IndexError, KeyError, ValueError):
                 pass
-
+        print(car_list)
         return car_list
 
-# if __name__ == '__main__':
-#    get_car_list('coursera_week3_cars.csv')
+if __name__ == '__main__':
+    get_car_list('coursera_week3_2_cars.csv')
