@@ -99,7 +99,7 @@ def get_car_list(csv_filename):
         reader = csv.reader(csv_fd, delimiter=';')
         next(reader)
 
-        dict_creation = {car_class.car_type: car_class for car_class in [Car, Truck, SpecMachine]}
+        dict_creation = {car_class.car_type: car_class for car_class in (Car, Truck, SpecMachine)}
 
         for row in reader:
             try:
