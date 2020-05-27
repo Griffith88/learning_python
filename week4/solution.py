@@ -21,6 +21,7 @@ class File:
     def read(self):
         with open(self.file_path, 'r') as f:
             self.value = f.read()
+            print(self.value)
             return self.value
 
     def write(self, data):
@@ -42,5 +43,6 @@ file_obj_2 = File(path_to_file + '_2')
 file_obj_1.write('line 1\n')
 file_obj_2.write('line 2\n')
 new_file_obj = file_obj_1 + file_obj_2
+print(isinstance(new_file_obj, File))
 
 
