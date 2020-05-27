@@ -1,11 +1,16 @@
 import os.path
 import tempfile
 
+
 class File:
 
     def __init__(self, file_path, value=None):
         self.file_path = file_path
         self.value = value or ''
+        if os.path.exists(self.file_path):
+            data = self.read()
+            with open(self.file_path, 'w') as f:
+                f.write(data)
         with open(self.file_path, 'w') as f:
             f.write(self.value)
 
@@ -18,28 +23,18 @@ class File:
         return self.file_path
 
     def __iter__(self):
+        with open(self.file_path, 'r') as f:
+            self.line_list = f.readlines()
+        self.start_line = 0
         return self
 
     def __next__(self):
 
-        with open(self.file_path, 'r') as f:
-            start = -1
-            my_lines = f.readlines()
-            end_line = len(my_lines)
-            if start < end_line:
-                start += 1
-                return f.readline(start)
+        if self.start_line == len(self.line_list):
             raise StopIteration
-
-    #тест обрботки файла делаю для себя. Он не нужен в оснвной программе
-    def len_count(self):
-        print(self.file_path)# выводит путь до файла
-        print(ascii(self.value)) #выводит содержимое для обьекта типа File
-        with open(self.file_path, 'r') as f:
-            text = f.readlines()
-            print(len(text))
-
-
+        line_c = self.line_list[self.start_line]
+        self.start_line += 1
+        return line_c
 
     def read(self):
         with open(self.file_path, 'r') as f:
@@ -51,8 +46,6 @@ class File:
         with open(self.file_path, 'w') as f:
             f.write(data)
             print(len(data))
-
-
 
 path_to_file = 'some_filename'
 file_obj = File(path_to_file)
@@ -69,6 +62,5 @@ file_obj_2.write('line 2\n')
 new_file_obj = file_obj_1 + file_obj_2
 print(new_file_obj)
 print(isinstance(new_file_obj, File))
-# for line in new_file_obj:
-#     print(ascii(line))
-
+for line in new_file_obj:
+    print(ascii(line))
