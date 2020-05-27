@@ -33,7 +33,7 @@ class File:
 
     #тест обрботки файла делаю для себя. Он не нужен в оснвной программе
     def len_count(self):
-        with open(self_path, 'r') as f:
+        with open(self.file_path, 'r') as f:
             f.read()
             print(f.read())
 
