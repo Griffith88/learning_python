@@ -35,6 +35,9 @@ class File:
     def len_count(self):
         print(self.file_path)# выводит путь до файла
         print(ascii(self.value)) #выводит содержимое для обьекта типа File
+        with open(self.file_path, 'r') as f:
+            text = f.readline()
+            print(text)
 
 
 
