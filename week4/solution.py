@@ -10,7 +10,8 @@ class File:
             f.write(self.value)
 
     def __add__(self, other):
-        new_obj = File('new_file', self.read() + other.read())
+        file_dir = os.path.join(tempfile.gettempdir(), 'new_obj')
+        new_obj = File(file_dir, self.read() + other.read())
         print(new_obj)
         return new_obj
 
@@ -26,7 +27,7 @@ class File:
         with open(self.file_path, 'w') as f:
             f.write(data)
             print(len(data))
-            return f.write(data)
+
 
 path_to_file = 'some_filename'
 file_obj = File(path_to_file)
