@@ -18,8 +18,19 @@ class File:
     def __str__(self):
         return self.file_path
 
-     def __iter__(self):
-         return self
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        pos = 0
+
+        with open(self.file_path, 'r') as f:
+            pos = 0
+            while f.readline(pos) != '':
+                pos += 1
+                return f.readline(pos)
+            return StopIteration
+
 
 
     def read(self):
