@@ -12,7 +12,6 @@ class File:
     def __add__(self, other):
         file_dir = os.path.join(tempfile.gettempdir(), 'new_obj')
         new_obj = File(file_dir, self.read() + other.read())
-        print(new_obj)
         return new_obj
 
     def __str__(self):
@@ -22,14 +21,17 @@ class File:
         return self
 
     def __next__(self):
-        pos = 0
 
         with open(self.file_path, 'r') as f:
-            pos = 0
-            while f.readline(pos) != '':
-                pos += 1
-                return f.readline(pos)
-            return StopIteration
+            start = -1
+            my_lines = f.readlines()
+            end_line = len(my_lines) - 1
+            while start <= end_line:
+                start += 1
+                return f.readline(start)
+        return StopIteration('Nothing More')
+
+
 
 
 
@@ -59,6 +61,7 @@ file_obj_2 = File(path_to_file + '_2')
 file_obj_1.write('line 1\n')
 file_obj_2.write('line 2\n')
 new_file_obj = file_obj_1 + file_obj_2
+print(new_file_obj)
 print(isinstance(new_file_obj, File))
 for line in new_file_obj:
     print(ascii(line))
