@@ -10,7 +10,7 @@ class File:
             f.write(self.value)
 
     def __add__(self, other):
-        new_obj = File(str.join(tempfile.gettempdir(), 'new_file'), self.value + other.value)
+        new_obj = File('new_file', self.read() + other.read())
         print(new_obj)
         return new_obj
 
