@@ -31,9 +31,11 @@ class File:
                 return f.readline()
             raise StopIteration
 
-    #тест обрботки файла
+    #тест обрботки файла делаю для себя. Он не нужен в оснвной программе
     def len_count(self):
-        print(len(self.value))
+        with open(self_path, 'r') as f:
+            f.read()
+            print(f.read())
 
 
 
