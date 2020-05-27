@@ -25,13 +25,15 @@ class File:
         with open(self.file_path, 'r') as f:
             start = -1
             my_lines = f.readlines()
-            end_line = len(my_lines) - 1
-            while start <= end_line:
+            end_line = len(my_lines)
+            if start < end_line:
                 start += 1
-                return f.readline(start)
-        return StopIteration('Nothing More')
+                return f.readlines()
+            raise StopIteration
 
-
+    #тест обрботки файла
+    def len_count(self):
+        print(len(self.value))
 
 
 
@@ -63,6 +65,6 @@ file_obj_2.write('line 2\n')
 new_file_obj = file_obj_1 + file_obj_2
 print(new_file_obj)
 print(isinstance(new_file_obj, File))
-for line in new_file_obj:
-    print(ascii(line))
+# for line in new_file_obj:
+#     print(ascii(line))
 
