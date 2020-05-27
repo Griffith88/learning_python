@@ -28,7 +28,7 @@ class File:
             end_line = len(my_lines)
             if start < end_line:
                 start += 1
-                return f.readline()
+                return f.readline(start)
             raise StopIteration
 
     #тест обрботки файла делаю для себя. Он не нужен в оснвной программе
@@ -36,8 +36,8 @@ class File:
         print(self.file_path)# выводит путь до файла
         print(ascii(self.value)) #выводит содержимое для обьекта типа File
         with open(self.file_path, 'r') as f:
-            text = f.readline()
-            print(text)
+            text = f.readlines()
+            print(len(text))
 
 
 
