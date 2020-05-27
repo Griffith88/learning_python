@@ -18,6 +18,10 @@ class File:
     def __str__(self):
         return self.file_path
 
+     def __iter__(self):
+         return self
+
+
     def read(self):
         with open(self.file_path, 'r') as f:
             self.value = f.read()
@@ -28,6 +32,7 @@ class File:
         with open(self.file_path, 'w') as f:
             f.write(data)
             print(len(data))
+
 
 
 path_to_file = 'some_filename'
@@ -44,5 +49,6 @@ file_obj_1.write('line 1\n')
 file_obj_2.write('line 2\n')
 new_file_obj = file_obj_1 + file_obj_2
 print(isinstance(new_file_obj, File))
-
+for line in new_file_obj:
+    print(ascii(line))
 
