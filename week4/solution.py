@@ -28,7 +28,7 @@ class File:
             end_line = len(my_lines)
             if start < end_line:
                 start += 1
-                return f.readlines()
+                return f.readline()
             raise StopIteration
 
     #тест обрботки файла
