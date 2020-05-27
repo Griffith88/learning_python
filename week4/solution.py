@@ -33,9 +33,8 @@ class File:
 
     #тест обрботки файла делаю для себя. Он не нужен в оснвной программе
     def len_count(self):
-        with open(self.file_path, 'r') as f:
-            f.read()
-            print(f.read())
+        print(self.file_path)# выводит путь до файла
+        print(ascii(self.value)) #выводит содержимое для обьекта типа File
 
 
 
