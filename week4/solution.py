@@ -8,18 +8,16 @@ class File:
         self.file_path = file_path
         self.value = value or ''
         if os.path.exists(self.file_path):
-            open(self.file_path).close()
+            data = self.read()
+            with open(self.file_path, 'w') as f:
+                f.write(data)
         else:
             with open(self.file_path, 'w') as f:
-                f.write(self.value)
+                pass
 
     def __add__(self, other):
-        file_dir = tempfile.NamedTemporaryFile(delete=False).name
-        #fd, file_dir = tempfile.mkstemp()
-        print(f'Впишем эти значения {self.read()} и {other.read()}')
-        new_obj = File(file_dir)
-        with open(file_dir, 'w') as f:
-            f.write(self.read() + other.read())
+        file_dir = os.path.join(tempfile.gettempdir(), 'new_obj')
+        new_obj = File(file_dir, self.read() + other.read())
         return new_obj
 
     def __str__(self):
