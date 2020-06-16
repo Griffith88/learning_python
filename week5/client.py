@@ -77,5 +77,6 @@ class Client:
         s_data_dict = {item[0]: sorted(item[1]) for item in data_dict.items()}
         return dict(s_data_dict)
 
-# client = Client('127.0.0.1', 8888, timeout=30)
-# print(client.get('*'))
+client = Client('127.0.0.1', 8888, timeout=30)
+client.put
+print(client.get('*'))
