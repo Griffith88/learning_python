@@ -1,13 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import pygame
 import random
 import math
 
-SCREEN_DIM = (800, 600)
-
-
-# =======================================================================================
-# Класс для работы с векторами
-# =======================================================================================
 
 class Vec2d:
 
@@ -16,27 +13,31 @@ class Vec2d:
         self.y = y
 
     def __add__(self, other):
-        """возвращает сумму двух векторов"""
         return Vec2d(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
-        """"возвращает разность двух векторов"""
         return Vec2d(self.x - other.x, self.y - other.y)
 
     def __mul__(self, k):
-        """возвращает произведение вектора на число"""
         return Vec2d(self.x * k, self.y * k)
 
     def __len__(self):
-        """возвращает длину вектора"""
-        return math.sqrt(self.x ** 2 + self.y ** 2)
+        return (self.x ** 2 + self.y ** 2) ** 0.5
+
+    def scal_mul(self, other):
+        product = 0
+        for i, j in zip((self.x, self.y), (other.x, other.y)):
+            product += i * j
+        return product
+
+    def vec(self, other):
+        return other - self
 
     def int_pair(self):
-        return int(self.x), int(self.y)
-
+        return self.x, self.y
 
 class Polyline(object):
-    """Класс замкнутых линий"""
+
     def __init__(self, points=None, speeds=None, screen_dim=(800, 600)):
         self.points = points or []
         self.speeds = speeds or []
@@ -46,8 +47,7 @@ class Polyline(object):
         self.points.append(point)
         self.speeds.append(speed)
 
-    def set_points(self):
-        """пересчёт координат точек"""
+    def set_points(self):  # пересчёт координат точек
         for p in range(len(self.points)):
             self.points[p] = self.points[p] + self.speeds[p]
             if self.points[p].x > self.screen_dim[0] or self.points[p].x < 0:
@@ -55,8 +55,7 @@ class Polyline(object):
             if self.points[p].y > self.screen_dim[1] or self.points[p].y < 0:
                 self.speeds[p] = Vec2d(self.speeds[p].x, -self.speeds[p].y)
 
-    def draw_points(self, style="points", width=3, color=(255, 255, 255)):
-        """отрисовка ломанной"""
+    def draw_points(self, style="points", width=3, color=(255, 255, 255)):  # отрисовка ломаной
         if style == "line":
             for p_n in range(-1, len(self.points) - 1):
                 pygame.draw.line(gameDisplay, color, (int(self.points[p_n].x), int(self.points[p_n].y)),
@@ -69,10 +68,7 @@ class Polyline(object):
 
 
 class Knot(Polyline):
-    """Саб класс от Polyline
-    Добавление и пересчет коррдинат иницирует вызов функции get_knot для расчета точек кривой по добавленным "опорным"
-    точкам
-    """
+
     def __init__(self, points=None, count=0):
         super().__init__()
         self.points = points or []
@@ -83,7 +79,7 @@ class Knot(Polyline):
             deg = len(points) - 1
         if deg == 0:
             return points[0]
-        return points[deg] * alpha + self.__get_point(points, alpha, deg - 1) * (1 - alpha)
+        return points[deg]*alpha + self.__get_point(points, alpha, deg - 1)*(1 - alpha)
 
     def __get_points(self, base_points, count):
         alpha = 1 / count
@@ -98,9 +94,9 @@ class Knot(Polyline):
         res = []
         for i in range(-2, len(self.points) - 2):
             ptn = []
-            ptn.append((self.points[i] + self.points[i + 1]) * 0.5)
+            ptn.append((self.points[i] + self.points[i + 1])*0.5)
             ptn.append(self.points[i + 1])
-            ptn.append((self.points[i + 1] + self.points[i + 2]) * 0.5)
+            ptn.append((self.points[i + 1] + self.points[i + 2])*0.5)
             res.extend(self.__get_points(ptn, self.count))
         return res
 
@@ -109,8 +105,14 @@ def draw_help():
     gameDisplay.fill((50, 50, 50))
     font1 = pygame.font.SysFont("courier", 24)
     font2 = pygame.font.SysFont("serif", 24)
-    data = [["F1", "Show Help"], ["R", "Restart"], ["P", "Pause/Play"], ["Num+", "More points"],
-            ["Num-", "Less points"], ["", ""], [str(steps), "Current points"]]
+    data = []
+    data.append(["F1", "Show Help"])
+    data.append(["R", "Restart"])
+    data.append(["P", "Pause/Play"])
+    data.append(["Num+", "More points"])
+    data.append(["Num-", "Less points"])
+    data.append(["", ""])
+    data.append([str(steps), "Current points"])
 
     pygame.draw.lines(gameDisplay, (255, 50, 50, 255), True, [
         (0, 0), (800, 0), (800, 600), (0, 600)], 5)
@@ -121,18 +123,16 @@ def draw_help():
             text[1], True, (128, 128, 255)), (200, 100 + 30 * i))
 
 
-# =======================================================================================
 # Основная программа
-# =======================================================================================
-
 if __name__ == "__main__":
+    screen_dim = (800, 600)
     pygame.init()
-    gameDisplay = pygame.display.set_mode(SCREEN_DIM)
+    gameDisplay = pygame.display.set_mode(screen_dim)
     pygame.display.set_caption("MyScreenSaver")
 
     steps = 35
     working = True
-    polyline = Polyline(screen_dim=SCREEN_DIM)
+    polyline = Polyline(screen_dim=screen_dim)
     show_help = False
     pause = True
 
@@ -147,7 +147,7 @@ if __name__ == "__main__":
                 if event.key == pygame.K_ESCAPE:
                     working = False
                 if event.key == pygame.K_r:
-                    polyline = Polyline(screen_dim=SCREEN_DIM)
+                    polyline = Polyline(screen_dim=screen_dim)
                 if event.key == pygame.K_p:
                     pause = not pause
                 if event.key == pygame.K_KP_PLUS:
