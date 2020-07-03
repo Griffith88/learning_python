@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractEffect(ABC):
+class AbstractEffect(ABC, Hero):
+
+    def __init__(self, base):
+        self.base = base
 
     @abstractmethod
     def get_positive_effects(self):
@@ -18,45 +21,87 @@ class AbstractEffect(ABC):
 
 class AbstractPositive(AbstractEffect):
 
-    def __init__(self, base):
-        self.base = base
-
-    def get_positive_effects(self):
-        self.base.get_positive_effects()
-
     def get_negative_effects(self):
-        pass
-
-    def get_stats(self):
-        pass
+        return self.base.get_negative_effects().copy()
 
 
 class AbstractNegative(AbstractEffect):
 
-    def __init__(self, base):
-        self.base = base
-
-    def get_negative_effects(self):
-        self.base.get_negative_effects()
-
     def get_positive_effects(self):
-        pass
-
-    def get_stats(self):
-        pass
+        return self.base.get_positive_effects().copy()
 
 
 class Berserk(AbstractPositive):
 
     def get_positive_effects(self):
-        self.base.stats['Strength'] += 7
-        self.base.stats['Endurance'] += 7
-        self.base.stats['Agility'] += 7
-        self.base.stats['Charisma'] -= 3
-        self.base.stats['Intelligence'] -= 3
-        self.base.stats['Perception'] -= 3
-        self.base.stats['HP'] += 50
-        return self.base.stats
+        positive = self.base.get_positive_effects()
+        positive.append('Berserk')
+        return positive.copy()
+
+    def get_stats(self):
+        stats = self.base.get_stats()
+        for k in stats:
+            if k in ('Strength', 'Endurance', 'Agility', 'Luck'):
+                stats[k] += 7
+            elif k in ('Perception', 'Intelligence', 'Charisma'):
+                stats[k] -= 3
+            elif k == 'HP':
+                stats[k] += 50
+        return stats.copy()
 
 
+class Blessing(AbstractPositive):
 
+    def get_positive_effects(self):
+        positive = self.base.get_positive_effects()
+        positive.append('Blessing')
+        return positive.copy()
+
+    def get_stats(self):
+        stats = self.base.get_stats()
+        for k in stats:
+            if k in ('Strength', 'Endurance', 'Agility', 'Charisma', 'Perception', 'Intelligence', 'Luck'):
+                stats[k] += 2
+        return stats.copy()
+
+
+class Weakness(AbstractNegative):
+
+    def get_negative_effects(self):
+        negative = self.base.get_negative_effects()
+        negative.append('Weakness')
+        return negative.copy()
+
+    def get_stats(self):
+        stats = self.base.get_stats()
+        for k in stats:
+            if k in ('Strength', 'Endurance', 'Agility'):
+                stats[k] -= 4
+        return stats.copy()
+
+
+class EvilEye(AbstractNegative):
+
+    def get_negative_effects(self):
+        negative = self.base.get_negative_effects()
+        negative.append('EvilEye')
+        return negative.copy()
+
+    def get_stats(self):
+        state = self.base.get_stats()
+        state['Luck'] -= 10
+        return state.copy()
+
+class Curse(AbstractNegative):
+
+    def get_negative_effects(self):
+        negative = self.base.get_negative_effects()
+        negative.append('Curse')
+        return negative.copy()
+
+    def get_stats(self):
+        stats = self.base.get_stats()
+        for k in stats:
+            if k in ('Strength', 'Endurance', 'Agility', 'Charisma', 'Perception', 'Intelligence', 'Luck'):
+                stats[k] -= 2
+        return stats.copy()
