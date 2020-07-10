@@ -1,39 +1,37 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractObserver(ABC):
-    @abstractmethod
-    def update(self, message):
+class ObservableEngine(Engine):
+    """Наблюдаемый класс"""
+    def subscribe(self, subscriber):
         pass
+
+    def unsbuscribe(self, subscriber):
+        pass
+
+    def notify(self, message):
+        pass
+
+class AbstractObserver(ABC):
+
+    @abstractmethod
+    def update(self):
+
 
 
 class ShortNotificationPrinter(AbstractObserver):
-    def __init__(self):
-        self.achievements = set()
+
+    def __init__(self, subscriber):
+        self.subscriber = set()
 
     def update(self, message):
-        self.achievements.add(message['title'])
-
+        for i in self.subscribers:
+           for
 
 class FullNotificationPrinter(AbstractObserver):
-    def __init__(self):
-        self.achievements = list()
 
-    def update(self, message):
-        if message not in self.achievements:
-            self.achievements.append(message)
+    def __init__(self, subscriber):
+        self.subscriber = list()
 
-
-class ObservableEngine(Engine):
-    def __init__(self):
-        self.__observers = set()
-
-    def subscribe(self, observer):
-        self.__observers.add(observer)
-
-    def unsubscribe(self, observer):
-        self.__observers.remove(observer)
-
-    def notify(self, message):
-        for observer in self.__observers:
-            observer.update(message)
+    def update(self):
+        pass
