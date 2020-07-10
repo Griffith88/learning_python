@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22f92dc3-62ca-40d0-a292-d58699033bc0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../week3/Adapter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/Observer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/zsv9bTN3EeiTdA5yoE99Fg_cf2b5b10337711e891c9db9c62e3ce01_decorator/.ipynb_checkpoints/Adapter-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/zsv9bTN3EeiTdA5yoE99Fg_cf2b5b10337711e891c9db9c62e3ce01_decorator/.ipynb_checkpoints/Observer-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/zsv9bTN3EeiTdA5yoE99Fg_cf2b5b10337711e891c9db9c62e3ce01_decorator/Adapter.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/zsv9bTN3EeiTdA5yoE99Fg_cf2b5b10337711e891c9db9c62e3ce01_decorator/Observer.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/AbstractFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/EventChain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Abstract_factory/.ipynb_checkpoints/Basic_abstract_factory-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Abstract_factory/Basic_abstract_factory.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Abstract_factory/Improved_abstract_factory.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Chain_of_responsibility/.ipynb_checkpoints/Chain_of_responsibility-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Chain_of_responsibility/Chain_of_responsibility.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Chain_of_responsibility/improved_chain_of_responsibility.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/jupyter/Yaml.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/solution.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week4/yaml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/final_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Objects.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ScreenEngine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/levels.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/Ground_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/Ground_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/Ground_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/Hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/ally/NPC_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/ally/NPC_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/ally/NPC_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/enemies/Enemy_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/enemies/Naga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/enemies/dragon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/enemies/rat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/objects/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/objects/stair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture/wall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/Hero_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/Hero_decorator.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectId" id="1eMFyHvuSdSJIZxjHkYy2UGxtd9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main.py" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="final_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\dobrokhotov.vn\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="final_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\dobrokhotov.vn\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22f92dc3-62ca-40d0-a292-d58699033bc0" name="Default" comment="" />
+      <created>1526242997195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526242997195</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594123998497">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594123998497" />
+    <state x="-1180" y="275" key="FileChooserDialogImpl" timestamp="1594123990054">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1180" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594123990054" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1594182601535">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594182601535" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1594182601535">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594182601535" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1594182601534">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594182601534" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1594182601535">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1594182601535" />
+  </component>
+</project>
