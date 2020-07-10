@@ -92,6 +92,7 @@ class EvilEye(AbstractNegative):
         state['Luck'] -= 10
         return state.copy()
 
+
 class Curse(AbstractNegative):
 
     def get_negative_effects(self):
